@@ -1,0 +1,78 @@
+<!DOCTYPE html>  
+<html>  
+<head>
+    <style>
+        body
+{
+  background-color:#A8A8A8;
+   
+  margin-top: 200px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 150px;
+ 
+}
+    
+</style>
+    <title>Validation Page</title>  
+    <script type="text/javascript">  
+        
+        function GenerateCaptcha() {  
+            var chr1 = Math.ceil(Math.random() * 10) + '';  
+            var chr2 = Math.ceil(Math.random() * 10) + '';  
+            var chr3 = Math.ceil(Math.random() * 10) + '';  
+  
+            var str = new Array(4).join().replace(/(.|$)/g, function () { return ((Math.random() * 36) | 0).toString(36)[Math.random() < .5 ? "toString" : "toUpperCase"](); });  
+            var captchaCode = str + chr1 + ' ' + chr2 + ' ' + chr3;  
+            document.getElementById("txtCaptcha").value = captchaCode  
+        }  
+        
+        function ValidCaptcha() 
+        {  
+            var str1 = removeSpaces(document.getElementById('txtCaptcha').value);  
+            var str2 = removeSpaces(document.getElementById('txtCompare').value);  
+  
+            var b=str1 == str2;
+            if(b==true)
+            { 
+            alert("Valid Captcha");
+            window.location.href = "http://localhost/ELEARNING1/ELEARNING1/index.php";
+            }  
+            else
+            {
+            alert("Invalid Captcha");
+            }  
+        }  
+        function removeSpaces(string) {  
+            return string.split(' ').join('');  
+        }  
+
+    </script>  
+</head>  
+<head>  
+     <center>
+<body onload="GenerateCaptcha();">  
+    <div style="border: 2px solid gray; width: 700px; background-color: pink;">  
+       
+        <h2>Generating Captcha :</h2>  
+  
+        Enter the Captcha Text:  
+        <input type="text" id="txtCompare" />  
+        <input type="text" id="txtCaptcha" style="text-align: center; border: none; font-weight: bold; font-size: 20px; font-family: Modern; background-color: grey; " />  
+        <input type="button" id="btnrefresh" value="Refresh" onclick="GenerateCaptcha();" />  
+        <input id="btnValid" type="button" value="Check" onclick="alert(ValidCaptcha());" />  
+        <br>
+        <div align="margin-left">
+            <button onclick="location.href= 'index.html';" id="myButton" class="float-left submit-button" >Go Back</button>
+      
+    </div>
+        <br>  
+        <br> 
+        
+    </div> 
+    </center>  
+
+
+</script>
+</body>  
+</html>  

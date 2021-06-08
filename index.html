@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+body
+{
+  background-color: coral;
+}
+</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐭</text></svg>">  
+  <title>Mouse Path Recorder</title>
+  <link rel="stylesheet" href="mpr.css">
+</head>
+<body>
+  <header>
+    <h1>🐭 Path Recorder</h1>
+    <a href="#help">Help</a>
+  </header>
+  <canvas></canvas>
+  <p class="buttons">
+    <output></output>
+    <button class="inactive" id="undo">Undo</button>
+    <input id="fewer" type="checkbox"><label for="fewer" title="Record fewer points by discarding those close to each other">Limit Points</label>
+    <button class="inactive" id="replay">Play</button>
+    <a href="" class="inactive" id="download">Download</a>
+    <label for="getfile">Load</label><input type="file" id="getfile">
+    <button id="clear">🗑</button>
+  </p>
+  <label for="pathdata">Points Data:</label>
+  <span id="recording">🔴</span>
+  <textarea id="pathdata"></textarea>
+  <section id="help">
+    <h2>Quick instructions</h2>
+    <p>This is a simple tool to record mouse movements and create a JSON object from them.</p>
+    <ul>
+    <li>Start by clicking on the big rectangle and you'll see a recording icon appear bottom left. Any mouse movement now adds to the dataset. Click again to end the recording.</li>
+    <li>Enable "Limit Points" to record fewer points and get a smaller dataset.</li>
+    <li>Once recorded, you can re-play the paths with the play button.</li>
+    <li>Edit the dataset in the text box below and save it as a file by clicking the download link.</li>
+    <li>The load button allows you to load datasets.</li>
+    <li>If you load an image, it will become the background to allow you to trace it.</li>
+    <li>Click the bin to delete all your work and start over.</li>
+    </ul> 
+    <p>To get more info contact : MADHAV NARAYAN SINGH (18BCE2236) <br></a>Issues and pull requests are also welcome.</p>
+    <p class="buttons"><a href="#top">Got it!</a></p>
+  </section>
+  <script src="mpr.js"></script>
+</body>
+</html>
